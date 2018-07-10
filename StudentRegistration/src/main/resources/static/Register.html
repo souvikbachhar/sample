@@ -1,0 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<script src="./app.js"></script>
+<style>
+label { 
+width: 10px; 
+ }
+</style>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl" align="middle">
+		<form ng-submit="insertData(student)">
+		<h1>Register</h1>
+		<p>
+			<label>Name         :<label> <input type="text" ng-model="student.name" required>
+		</p>
+		<p>
+			<label>DOB          :<label> <input type="date" ng-model="student.dob" required>
+		</p>
+		<p>
+		<label>Qualification:<label> <select ng-options="x for x in qualifications" ng-model="student.qualification"></select>
+		<p>
+		<p>
+			<label>Address      :<label> <textarea ng-model="student.address" required>Enter text here...</textarea>
+		</p>
+		<p>
+			<label>Mobile no.   :<label> <input type="number" ng-model="student.number"  onKeyPress="if(this.value.length==10) return false;" required>
+		</p>
+		
+		<div style="color:red"><a>{{registrationstatus}}</a></div>
+		<p>
+			<!-- <button ng-click="insertData(student)">Submit</button>-->
+			<input type="submit">
+		</p>
+		</form>
+	</div>
+</body>	
